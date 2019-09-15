@@ -3,9 +3,8 @@ The features of this map is to identify, by voter counts, the top 100 counties t
 The purpose was to identify if resources could be used in the identified swing counties to influence voters in the respective counties. And likewise perhaps not devote resources to counties that historically are strong holds for each party. 
 # How the map was created
 The data for 2012 and 2012 elections and then sorted by number of voters and then whether or not the county voted REP, DEM or split in the past two elections. The results were then placed into 3 seperate datasets.
-the SQL used for maps:
-
-    SELECT 
+# The SQL used for maps:
+   SELECT 
     dme256.cb_2015_us_county_20m.cartodb_id,
     dme256.cb_2015_us_county_20m.the_geom,
     statefp,
@@ -26,7 +25,7 @@ the SQL used for maps:
     From dme256.us_county_level_presidential_results_2016, dme256.cb_2015_us_county_20m
     Where fips = geoid
 
-    SELECT 
+ SELECT 
 	dme256.cb_2015_us_county_20m_1.the_geom_webmercator,
    	dme256.cb_2015_us_county_20m_1.cartodb_id,
     dme256.cb_2015_us_county_20m_1.the_geom,
@@ -34,7 +33,7 @@ the SQL used for maps:
     countyfp,
     countyns,
     affgeoid,
-   	name,
+   	county_name,
     lsad,
     aland,
 	awater,
@@ -42,10 +41,10 @@ the SQL used for maps:
     red_dem_2016,
     red_gop_2016
   
-From dme256.red_county, dme256.cb_2015_us_county_20m_1
-Where red_fips_code = geoid
+    From dme256.red_county, dme256.cb_2015_us_county_20m_1
+    Where red_fips_code = geoid
 
-SELECT 
+ SELECT 
 	dme256.cb_2015_us_county_20m_2.the_geom_webmercator,
    	dme256.cb_2015_us_county_20m_2.cartodb_id,
     dme256.cb_2015_us_county_20m_2.the_geom,
@@ -61,8 +60,7 @@ SELECT
     blue_dem_2016,
     blue_gop_2016
     
-    
-From dme256.blue_counties, dme256.cb_2015_us_county_20m_2
-Where blue_fips_code = geoid
+    From dme256.blue_counties, dme256.cb_2015_us_county_20m_2
+    Where blue_fips_code = geoid
 
-The swing counties are represented in 5 quantiles by total GOP/DEM voters.
+# The swing counties are represented in 5 quantiles by total GOP/DEM voters.
