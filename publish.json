@@ -1,7 +1,7 @@
 {
     "title": "100 voter swing states for 2012 and 2016 ",
-    "info": "a map of top 100 voter swing states for different parties in 2012 and 2016 elections", 
-    "coordinates": [39, -97],
+    "info": "a map of states for different parties in 2012 and 2016 elections", 
+    "coordinates": [39, -98],
     "author": "Dave Metzgar", 
     "link": "https://github.com/dme256/presidential-election-swing_counties/" 
 }
